@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: mart_tracks
+    description: "This is a model that does something."
+    columns:
+      - name: fact_id
+        description: "Primary key for the fact table."
+        data_tests: 
+          - unique
+          - not_null
+
+      - name: track_name
+        description: "The name of the track."
+        data_tests:
+          - not_null
+
+      - name: artist_name
+        description: "The name of the artist."
+        data_tests:
+          - not_null
+      
+      - name: popularity
+        description: "The popularity score of the track."
+        data_tests:
+          - not_null
