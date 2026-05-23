@@ -1,15 +1,16 @@
-Welcome to your new dbt project!
+## Project Overview
+dbt transformation layer for Spotify Data Warehouse.
+Builds analytics-ready models from raw PostgreSQL tables
+with built-in data quality tests.
 
-### Using the starter project
+## Models
+- mart_tracks: Joins fact_tracks with dimension tables
+  for analytics-ready track data
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Tests
+- unique: fact_id must be unique
+- not_null: track_name, artist_name, popularity
 
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## How to run
+1. dbt run    ← build models
+2. dbt test   ← run data quality tests
